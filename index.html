@@ -80,15 +80,9 @@
           </li>
           <li class="nav-item"><a class="nav-link" href="#idocs_javascript">JavaScript</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#idocs_content">SQL</a>
-            <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#idocs_typography">Typography</a></li>
-              <li class="nav-item"><a class="nav-link" href="#idocs_code">Code</a></li>
-              <li class="nav-item"><a class="nav-link" href="#idocs_table">Table</a></li>
-              <li class="nav-item"><a class="nav-link" href="#idocs_icons">Icons</a></li>
-              <li class="nav-item"><a class="nav-link" href="#idocs_image">Image</a></li>
-              <li class="nav-item"><a class="nav-link" href="#idocs_video">Video</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="#idocs_sql">SQL</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_testing">Testing</a>
           </li>
           <li class="nav-item"><a class="nav-link" href="#idocs_components">Data Structures & Algorithms</a>
             <ul class="nav flex-column">
@@ -134,6 +128,74 @@
                 <p>
                   A cookie is a piece of data that is stored on a client site to be accessed by your browser. Cookies are saved as key/value pairs
                 </p>
+              </li>
+              <li>
+                <strong>SOLID Principles</strong>
+                <ul>
+                  <li>
+                      <strong>S stand for Single-responsiblity</strong>: A class should have one and only one reason to change, meaning that a class should have only one job.
+                      <pre>
+                        <code class="language-html">
+                          <strong>Before:</strong>
+                          class UserService 
+                          { 
+                            void Register(); 
+                            void SendEmail() 
+                          }
+                          
+                          <strong>After:</strong>
+                          class UserService 
+                          { 
+                            void Register(); 
+                          } 
+                          
+                          class EmailService 
+                          { 
+                            bool void SendEmail() 
+                          }
+                        </code>
+                      </pre>
+                  </li>
+                  <li><strong>O stand fo Open/Close</strong>: Objects or entities should be open for extension but closed for modification</li>
+                  <li>L stand for Liskov</li>
+                  <li>
+                      <strong>I stand for Interface Segregation</strong>: Reduce the side effects and frequency of required changes by splitting the interface into multiple, independent parts.
+                      <pre>
+                        <code class="language-html">
+                          <strong>Before:</strong>
+                          public interface IOrder
+                          {
+                            void AddToCart();
+                            void CCProcess();
+                          }
+                          
+                          public class OnlineOrder : IOrder
+                          {
+                            public void AddToCart() {}
+                            public void CCProcess() {}
+                          }
+                          
+                          <strong>After:</strong>
+                          public interface IOrder
+                          {
+                            void AddToCart();
+                          }
+                          
+                          public interface IOnlineOrder
+                          {
+                            void CCProcess();
+                          }
+                          
+                          public class OnlineOrder : IOrder, IOnlineOrder
+                          {
+                            public void AddToCart() {}
+                            public void CCProcess() {}
+                          }
+                        </code>
+                      </pre>
+                  </li>
+                  <li><strong>D stand for Dependency Inversion</strong>: Entities must depend on abstractions, not on concretions. High-level module must not depend on the low-level module, but they should depend on abstractions.</li>
+                </ul>
               </li>
             </ol>
           </section>
@@ -345,68 +407,15 @@
 
           <hr class="divider">
 
-          <!-- HTML Structure -->
-          <section id="idocs_html_structure">
-            <h2>HTML Structure</h2>
-            <p>iDocs follows a simple and easy to customize coding structure. Here is the sample for your reference:<br>
-              The template is based on <a class="ml-1" target="_blank" href="https://getbootstrap.com/"><i
-                  class="fas fa-external-link-alt"></i> Bootstrap Framework</a></p>
-            <pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-
-&lt;!-- Your Title, Description, Stylesheets
-============================================= --&gt;
-
-&lt;/head&gt;
-
-&lt;body data-spy=&quot;scroll&quot; data-target=&quot;.idocs-navigation&quot; data-offset=&quot;125&quot;&gt;
-
-&lt;!-- Document Wrapper   
-=============================== --&gt;
-&lt;div id=&quot;main-wrapper&quot;&gt; 
-  
-  &lt;!-- Header
-  ============================ --&gt;
-  &lt;header id=&quot;header&quot; class=&quot;sticky-top&quot;&gt;
-   ......
-  &lt;/header&gt;
-  &lt;!-- Header End --&gt; 
-  
-  &lt;!-- Content
-  ============================ --&gt;
-  &lt;div id=&quot;content&quot; role=&quot;main&quot;&gt; 
-    
-    &lt;!-- Sidebar Navigation
-    ============================ --&gt;
-    &lt;div class=&quot;idocs-navigation bg-light&quot;&gt;
-     .....
-    &lt;/div&gt;
-    
-    &lt;!-- Docs Content
-    ============================ --&gt;
-    &lt;div class=&quot;idocs-content&quot;&gt;
-      &lt;div class=&quot;container&quot;&gt;
-        .......
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;!-- Content end --&gt; 
-  
-  &lt;!-- Footer --&gt;
-  &lt;footer id=&quot;footer&quot; class=&quot;section bg-dark footer-text-light&quot;&gt;
-    &lt;div class=&quot;container&quot;&gt; ...... &lt;/div&gt;
-  &lt;/footer&gt;
-  &lt;!-- Footer end --&gt; 
-  
-&lt;/div&gt;
-&lt;!-- Document Wrapper end --&gt; 
-
-&lt;!-- JavaScript --&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-            <p class="alert alert-info">If you need more information, please visit bootstrap site: <a target="_blank"
-                href="https://getbootstrap.com/docs/4.4/layout/grid/">https://getbootstrap.com</a></p>
+          <!-- Testing -->
+          <section id="idocs_testing">
+            <h2>Testing</h2>
+            <ol>
+              <li>
+                <strong>Why do we must write unit test ?</strong>
+                <p>Code quality, regression test, code readable, easy extend and maintenance</p>
+              </li>
+            </ol>
           </section>
 
           <hr class="divider">
