@@ -84,22 +84,12 @@
           </li>
           <li class="nav-item"><a class="nav-link" href="#idocs_testing">Testing</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#idocs_components">Data Structures & Algorithms</a>
-            <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#idocs_accordion">Accordion</a></li>
-              <li class="nav-item"><a class="nav-link" href="#idocs_tabs">Tabs</a></li>
-              <li class="nav-item"><a class="nav-link" href="#idocs_social_icon">Social Icon</a></li>
-              <li class="nav-item"><a class="nav-link" href="#idocs_helper_classes">Helper Classes</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="#idocs_system_designs">System Designs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_datastructures">Data Structures & Algorithms</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#idocs_faq">FAQ</a></li>
           <li class="nav-item"><a class="nav-link" href="#idocs_source_credits">Source & Credits</a></li>
           <li class="nav-item"><a class="nav-link" href="#idocs_support">Support</a></li>
           <li class="nav-item"><a class="nav-link" href="#idocs_changelog">Changelog</a>
-            <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#v1-1">v1.1</a></li>
-              <li class="nav-item"><a class="nav-link" href="#v1-0">v1.0</a></li>
-            </ul>
           </li>
         </ul>
       </div>
@@ -130,6 +120,12 @@
                 </p>
               </li>
               <li>
+                <strong>Caching</strong>
+                <p>
+                  A technique that stores a copy of a given resource and serves it back when requested
+                </p>
+              </li>
+              <li>
                 <strong>SOLID Principles</strong>
                 <ul>
                   <li>
@@ -157,7 +153,7 @@
                       </pre>
                   </li>
                   <li><strong>O stand fo Open/Close</strong>: Objects or entities should be open for extension but closed for modification</li>
-                  <li>L stand for Liskov</li>
+                  <li><strong>L stand for Liskov</strong></li>
                   <li>
                       <strong>I stand for Interface Segregation</strong>: Reduce the side effects and frequency of required changes by splitting the interface into multiple, independent parts.
                       <pre>
@@ -197,6 +193,13 @@
                   <li><strong>D stand for Dependency Inversion</strong>: Entities must depend on abstractions, not on concretions. High-level module must not depend on the low-level module, but they should depend on abstractions.</li>
                 </ul>
               </li>
+              <li>
+                <strong>Messaging</strong>
+                <p>
+                  A message queue is a queue of messages sent between applications <br>
+                  <strong>Benefits of using Caching</strong>: Asynchronous communication which means that the endpoints that are producing and consuming messages interact with the queue, not each other. Producers can add requests to the queue without waiting for them to be processed. Consumers process messages only when they are available
+                </p>
+              </li> 
             </ol>
           </section>
 
@@ -385,6 +388,13 @@
 
           <hr class="divider">
 
+          <!-- SQL -->
+          <section id="idocs_sql">
+            <h2>SQL</h2>
+          </section>
+
+          <hr class="divider">
+
           <!-- Javascript -->
           <section id="idocs_javascript">
             <h2>Javascript</h2>
@@ -420,59 +430,57 @@
 
           <hr class="divider">
 
-          <!-- Sass -->
-          <section id="idocs_sass">
-            <h2>Sass</h2>
-            <p>We have added SASS <code>.scss</code> files in template. If you know how to use SASS you can change sass
-              files and compile the css as well.
-              You can find sass file here - <code>HTML/assets/sass</code></p>
-            <p>Open the <code>sass/_variables.scss</code> and Edit the values according to your needs. If you need more
-              Advanced Setup then you can Edit the Respective Files yourself which have been branched inside the same
-              Folder. It is completely at your discretion only to include the Required <code>.scss</code> Files you need
-              to minimize the amount of CSS & including only the Styles of the Blocks you need. This can be setup in
-              your <code>stylesheet.scss</code> File.</p>
+          <!-- System Designs -->
+          <section id="idocs_system_designs">
+            <h2>System Designs</h2>
+            <ol>
+              <li>
+                <strong>Monolithic</strong>
+                <p>Architect an application as a single deployable unit</p>
+                <strong>Advantages</strong>
+                <ul>
+                  <li>Easier debugging and testing</li>
+                  <li>Simple to deploy</li>
+                  <li>Simple to develop</li>
+                </ul>
+                <br>
+                <strong>Disadvantages</strong>
+                <br>
+                <ul>
+                  <li><strong>Understanding</strong>. When a monolithic application scales up, it becomes too complicated to understand. Also, a complex system of code within one application is hard to manage.</li>
+                  <li><strong>Making changes</strong>. It is harder to implement changes in such a large and complex application with highly tight coupling. Any code change affects the whole system so it has to be thoroughly coordinated</li>
+                  <li><strong>Scalability</strong>. You cannot scale components independently, only the whole application</li>
+                  <li><strong>New technology barriers</strong>. It is extremely problematic to apply a new technology in a monolithic application because then the entire application has to be rewritten</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Microservices</strong>
+                <p>Microservices is an architectural style that structures an application as a collection of small autonomous services (independent), modeled around a business domain</p>
+                <strong>Advantages</strong>
+                <ul>
+                  <li>Independent Development</li>
+                  <li>Independent Deployment</li>
+                  <li><strong>Fault Isolation</strong>. Even if one service of the application crash, the system still continues to function</li>
+                  <li><strong>Mixed Technology Stack</strong>. Different languages and technologies can be used to build different services of the same application</li>
+                  <li><strong>Granular Scaling</strong>. Microservice can scale on demand, no need to scale all services together</li>
+                </ul>
+                <br>
+                <strong>Disadvantages</strong>
+                <br>
+                <ul>
+                  <li>Testing</li>
+                  <li>Difficult to manage a large number of services</li>
+                  <li>Cross-cutting concerns such as externalized configuration, logging, metrics, health checks</li>
+                </ul>
+              </li>
+            </ol>
           </section>
 
           <hr class="divider">
 
-          <!-- Color Schemes -->
-          <section id="idocs_color_schemes">
-            <h2>Color Schemes</h2>
-            <p>You can change your Website's Color Scheme in an instant. We have build <strong>10 Color</strong> css
-              file for change template primary color.</p>
-            <ul>
-              <li><code>color-blue.css</code> - Blue Color</li>
-              <li><code>color-brown.css</code> - Brown Color</li>
-              <li><code>color-cyan.css</code> - Cyan Color</li>
-              <li><code>color-green.css</code> - Green Color</li>
-              <li><code>color-orange.css</code> - Orange Color</li>
-              <li><code>color-indigo.css</code> - Indigo Color</li>
-              <li><code>color-purple.css</code> - Purple Color</li>
-              <li><code>color-red.css</code> - Red Color</li>
-              <li><code>color-teal.css</code> - Teal Color</li>
-              <li><code>color-yellow.css</code> - Yellow Color</li>
-            </ul>
-            <p>Simply add Color CSS file link it in the Document <code>&lt;head&gt;</code>.<br>
-              Make sure you add the <code>css/color-blue.css</code> stylesheet in your head after the
-              <code>css/stylesheet.css</code> file linking from above mentioned 10 color css file.</p>
-            <p><strong>For Example:</strong></p>
-            <pre><code class="html">&lt;head&gt;
-&lt;!-- Stylesheet
-============================== --&gt;
-&lt;!-- Bootstrap --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/bootstrap/css/bootstrap.min.css&quot; /&gt;
-&lt;!-- Font Awesome Icon --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/font-awesome/css/all.min.css&quot; /&gt;
-&lt;!-- Magnific Popup --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/magnific-popup/magnific-popup.min.css&quot; /&gt;
-&lt;!-- Highlight Syntax --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/highlight.js/styles/github.css&quot; /&gt;
-&lt;!-- Custom Stylesheet --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/css/stylesheet.css&quot; /&gt;
-
-&lt;!-- Here goes your Colors Css --&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/css/color-orange.css&quot; /&gt;
-&lt;/head&gt;</code></pre>
+          <!-- Data Structures & Algorithms -->
+          <section id="idocs_datastructures">
+            <h2>Data Structures & Algorithms</h2>
           </section>
 
           <hr class="divider">
@@ -519,7 +527,6 @@
 &lt;!-- Logo End --&gt;
 </code></pre>
           </section>
-
 
           <hr class="divider">
 
@@ -757,36 +764,6 @@
 &lt;div class=&quot;idocs-navigation bg-dark docs-navigation-dark&quot;&gt;
   ....
 &lt;/div&gt;</code></pre>
-          </section>
-
-          <hr class="divider">
-
-          <!-- Footer -->
-          <section id="idocs_footer">
-            <h2>Footer</h2>
-            <p>The list of various footer types & its descriptions are provided below for your reference:</p>
-            <h4>Light Footer</h4>
-            <p>Footer with white background Color & Dark text. See below code for more information.</p>
-            <pre><code class="html">&lt;!-- Footer
-============================================= --&gt;
-  &lt;footer id=&quot;footer&quot; class=&quot;section bg-light&quot;&gt;
-    &lt;div class=&quot;container&quot;&gt;
-    	..........
-    &lt;/div&gt;
-  &lt;/footer&gt;
-&lt;!-- Footer end --&gt;</code></pre>
-            <h4>Dark Footer</h4>
-            <p>Footer with dark background color & Light text. See below code for more information.</p>
-            <p>Add the <code>.bg-dark</code> and <code>.footer-text-light</code> Class to the <code>footer</code> Tag to
-              display a Dark footer.</p>
-            <pre><code class="html">&lt;!-- Footer
-============================================= --&gt;
-&lt;footer id=&quot;footer&quot; class=&quot;section bg-dark footer-text-light&quot;&gt;
-    &lt;div class=&quot;container&quot;&gt;
-    	..........
-    &lt;/div&gt;
-&lt;/footer&gt;
-&lt;!-- Footer end --&gt;</code></pre>
           </section>
 
           <hr class="divider">
