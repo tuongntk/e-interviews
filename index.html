@@ -446,8 +446,140 @@
                   The purpose of mocking and stubbing is to isolate your unit from its dependencies, allowing you to test your unit in a controlled environment.
                 </p>
                 <ul>
-                  <li>A stub is a fake object that does not affect the outcome of the test. Its only purpose is to set up the test scenario by returning dummy test data.</li>
-                  <li>A mock verifies that the unit under test behaves as expected. A test’s outcome depends on the state of the mock object after executing an action.</li>
+                  <li>
+                    A stub is a fake object that does not affect the outcome of the test. Its only purpose is to set up the test scenario by returning dummy test data.
+                    <pre>
+                      <code class="language-html">
+                        Stub example:
+
+                        public class TransactionViewModel
+                        {
+                            //1
+                            private IWalletController _walletController;
+                        
+                            //2
+                            public TransactionViewModel(IWalletController walletController)
+                            {
+                                _walletController = walletController;
+                                Transactions = new List<Transaction>();
+                            }
+                        
+                            public List<Transaction> Transactions
+                            {
+                                get;
+                                set;
+                            }
+                        
+                            //3
+                            public async Task GetTransactions()
+                            {
+                                var transactions = await _walletController.GetTransactions();
+                                Transactions = transactions;
+                            }
+                        }
+
+                        public interface IWalletController
+                        {
+                            Task<List<Transaction>> GetTransactions(bool forceReload = false);
+                            Task<List<Coin>> GetCoins(bool forceReload = false);
+                        }
+
+                        //1
+                        class StubWalletController : IWalletController
+                        {
+                            public Task<List<Coin>> GetCoins(bool forceReload = false)
+                            {
+                                throw new NotImplementedException();
+                            }
+
+                            //2
+                            public Task<List<Transaction>> GetTransactions(bool forceReload = false)
+                            {
+                                var task = Task.FromResult(new List<Transaction>
+                                {
+                                    new Transaction { Id = 1, Amount = 2, Symbol = "BTC" },
+                                    new Transaction { Id = 2, Amount = 3, Symbol = "ETH" },
+                                    new Transaction { Id = 3, Amount = 7, Symbol = "ETH" },
+                                });
+                                return task;
+                            }
+                        }
+
+                        public class TransactionViewModelTests
+                        {
+                            [Fact]
+                            public async void GetTransactions_populates_Transactions_property()
+                            {
+                                //Arrange
+                                var transactionViewModel = new TransactionViewModel(new StubWalletController());
+                                //Act
+                                await transactionViewModel.GetTransactions();
+                                //Assert
+                                Assert.Equal(3, transactionViewModel.Transactions.Count);
+                            }
+                        }
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    A mock verifies that the unit under test behaves as expected. A test’s outcome depends on the state of the mock object after executing an action.
+                    <pre>
+                      <code class="language-html">
+                        Mock example:
+                        
+                        public interface IEmailSender
+                        {
+                            void SendEmail(string to, string subject, string mailBody);
+                        }
+
+                        public class OrderNotifier
+                        {
+                            private IEmailSender _emailSender;
+
+                            //1
+                            public OrderNotifier(IEmailSender emailSender)
+                            {
+                                _emailSender = emailSender;
+                            }
+
+                            //2
+                            public void NotifyThatOrderWasSent(string toAddress, string orderId)
+                            {
+                                var subject = $"Order {orderId} is on the way";
+                                var mailBody = $"Hello, your order {orderId} is on the way" + Environment.NewLine;
+                                mailBody += "It should arrive in the next 2-3 days.";
+
+                                _emailSender.SendEmail(toAddress, subject, mailBody);
+                            }
+                        }
+
+                        class MockEmailSender: IEmailSender
+                        {
+                            public bool MailWasSent { get; set; }
+
+                            public void SendEmail(string to, string subject, string mailBody)
+                            {
+                                MailWasSent = true;
+                            }
+                        }
+
+                        public class MailSenderTests
+                        {
+                            [Fact]
+                            public void NotifyThatOrderWasSent_sends_email()
+                            {
+                                //Arrange
+                                var sender = new MockEmailSender();
+                                var notifier = new OrderNotifier(sender);
+                                //Act
+                                notifier.NotifyThatOrderWasSent("test@gmail.com", "3223");
+                                //Assert
+                                Assert.True(sender.MailWasSent);
+                            }
+                        }
+                      </code>
+                    </pre>
+                  </li>
                 </ul>
                 <img class="img-fluid border" src="assets/images/stub_vs_mock-1024x656.jpg" width="680">
               </li>
