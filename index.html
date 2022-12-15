@@ -124,6 +124,23 @@
                 </p>
               </li>
               <li>
+                <strong>Distributed Cache</strong>
+                <p>
+                  Distributed cache is a cache shared by multiple apps servers
+                </p>
+                <strong>Advantages</strong>
+                <ul>
+                  <li>One place to update</li>
+                  <li>Easy to maintain</li>
+                </ul>
+                <br>
+                <strong>Disadvantages</strong>
+                <br>
+                <ul>
+                  <li>Single point of failure</li>
+                </ul>
+              </li>
+              <li>
                 <strong>SOLID Principles</strong>
                 <ul>
                   <li>
@@ -306,7 +323,7 @@
               </li>
               <li>
                 <strong>Generic</strong>
-                <p>Define classes, interfaces  using the type parameter and without the specific data type</p>
+                <p>Define classes, interfaces  using the type parameter and without the specific data type. Generics are used to make reusable code which decrease the code redundancy</p>
                 <pre>
                   <code class="language-html">
                       class DataStore<T>
@@ -422,6 +439,18 @@
               <li>
                 <strong>Why do we must write unit test ?</strong>
                 <p>Code quality, regression test, code readable, easy extend and maintenance</p>
+              </li>
+              <li>
+                <strong>What is a stub ?</strong>
+                <p>
+                  A stub is a fake object that does not affect the outcome of the test. Its only purpose is to set up the test scenario by returning dummy test data.
+                </p>
+              </li>
+              <li>
+                <strong>What is a mock ?</strong>
+                <p>
+                  A mock verifies that the unit under test behaves as expected. A test’s outcome depends on the state of the mock object after executing an action.
+                </p>
               </li>
             </ol>
           </section>
