@@ -279,6 +279,8 @@
 									<p>An <code>event loop</code> is a JS mechanism to manage the asynchronous tasks in JS single-threaded machine. Single thread means JS will execute task one by one so if there’s any asynchronous task, we don’t want that task to block the subsequent task and cause a bottleneck. Instead, JS will execute it in a memory heap and once it’s done, the callback will be pushed to a queue. There are 2 queues, macrotask queue and microtask queue. Depending on the task, it will be put in the respective queue</p>
 									<p><strong>Example of macrotask</strong> is <code>setTimeout</code>, <code>setInterval</code>, <code>setImmediate</code>, <code>requestAnimationFrame</code> and <code>I/O</code>.</p>
 									<p><strong>Example of microtask</strong> is <code>process.nextTick</code>, <code>Promises</code>, <code>queueMicrotask</code>, and <code>MutationObserver</code>.</p>
+									<p><img src="assets/images/1_lUBfIhcEcO7KWJK9gqIG_g.png" style="max-height: 500px;" alt="" class="img-thumbnail img-responsive"></p>
+									
 									<div>
 										<pre class="language-javascript">
 											<code>
