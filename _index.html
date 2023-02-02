@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+  <link href="assets/images/favicon.png" rel="icon" />
+  <title>Interview Q&A</title>
+  <meta name="description" content="Your ThemeForest item Name and description">
+  <meta name="author" content="harnishdesign.net">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <!-- Font Awesome Icon -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+  <!-- Highlight Syntax -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+</head>
+
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- Preloader End -->
+
+  <!-- Document Wrapper -->
+  <div id="main-wrapper">
+
+    <!-- Header -->
+    <header id="header" class="sticky-top">
+      <!-- Navbar -->
+      <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+        <div class="container-fluid">
+          <!-- Sidebar Toggler -->
+          <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span
+              class="w-75"></span><span class="w-50"></span></button>
+
+          <!-- Logo -->
+          <a class="logo ml-md-3" href="index.html" title="iDocs Template"> <img src="assets/images/logo.png"
+              alt="iDocs Template" /> </a>
+          <span class="text-2 ml-2">v1.0</span>
+          <!-- Logo End -->
+
+          <!-- Navbar Toggler -->
+          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+            data-target="#header-nav"><span></span><span></span><span></span></button>
+          <ul class="social-icons social-icons-sm ml-lg-2 mr-2">
+            <li class="social-icons-twitter"><a data-toggle="tooltip" href="http://www.twitter.com/harnishdesign/"
+                target="_blank" title="" data-original-title="Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li class="social-icons-facebook"><a data-toggle="tooltip" href="http://www.facebook.com/harnishdesign/"
+                target="_blank" title="" data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="social-icons-dribbble"><a data-toggle="tooltip" href="http://www.dribbble.com/harnishdesign/"
+                target="_blank" title="" data-original-title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+    </header>
+    <!-- Header End -->
+
+    <!-- Content -->
+    <div id="content" role="main">
+
+      <!-- Sidebar Navigation -->
+      <div class="idocs-navigation bg-light">
+        <ul class="nav flex-column ">
+          <li class="nav-item"><a class="nav-link active" href="#idocs_general">General</a>
+          </li>
+          <li class="nav-item"><a class="nav-link active" href="#idocs_net">.NET</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_javascript">JavaScript</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_sql">SQL</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_testing">Testing</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_system_designs">System Designs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_datastructures">Data Structures & Algorithms</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_best_practices">Best Practices</a></li>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Docs Content -->
+      <div class="idocs-content">
+        <div class="container">
+
+          <!-- Getting Started -->
+          <section id="idocs_start">
+            <h2>Interview Questions & Answers</h2>
+          </section>
+
+          <hr class="divider">
+
+          <!-- General -->
+          <section id="idocs_general">
+            <h2>General</h2>
+            <ol>
+              <li>
+                <strong>Load Balancing</strong>
+                <p>Distribute incoming network traffic across a group of backend servers</p>
+              </li>
+              <li>
+                <strong>What is a Cookie ?</strong>
+                <p>
+                  A cookie is a piece of data that is stored on a client site to be accessed by your browser. Cookies are saved as key/value pairs
+                </p>
+              </li>
+              <li>
+                <strong>Caching</strong>
+                <p>
+                  A technique that stores a copy of a given resource and serves it back when requested
+                </p>
+              </li>
+              <li>
+                <strong>Distributed Cache</strong>
+                <p>
+                  Distributed cache is a cache shared by multiple apps servers
+                </p>
+                <strong>Advantages</strong>
+                <ul>
+                  <li>One place to update</li>
+                  <li>Easy to maintain</li>
+                </ul>
+                <br>
+                <strong>Disadvantages</strong>
+                <br>
+                <ul>
+                  <li>Single point of failure</li>
+                </ul>
+              </li>
+              <li>
+                <strong>SOLID Principles</strong>
+                <ul>
+                  <li>
+                      <strong>S stand for Single-responsiblity</strong>: A class should have one and only one reason to change, meaning that a class should have only one job.
+                      <pre>
+                        <code class="language-html">
+                          <strong>Before:</strong>
+                          class UserService 
+                          { 
+                            void Register(); 
+                            void SendEmail() 
+                          }
+                          
+                          <strong>After:</strong>
+                          class UserService 
+                          { 
+                            void Register(); 
+                          } 
+                          
+                          class EmailService 
+                          { 
+                            bool void SendEmail() 
+                          }
+                        </code>
+                      </pre>
+                  </li>
+                  <li><strong>O stand fo Open/Close</strong>: Objects or entities should be open for extension but closed for modification</li>
+                  <li><strong>L stand for Liskov</strong></li>
+                  <li>
+                      <strong>I stand for Interface Segregation</strong>: Reduce the side effects and frequency of required changes by splitting the interface into multiple, independent parts.
+                      <pre>
+                        <code class="language-html">
+                          <strong>Before:</strong>
+                          public interface IOrder
+                          {
+                            void AddToCart();
+                            void CCProcess();
+                          }
+                          
+                          public class OnlineOrder : IOrder
+                          {
+                            public void AddToCart() {}
+                            public void CCProcess() {}
+                          }
+                          
+                          <strong>After:</strong>
+                          public interface IOrder
+                          {
+                            void AddToCart();
+                          }
+                          
+                          public interface IOnlineOrder
+                          {
+                            void CCProcess();
+                          }
+                          
+                          public class OnlineOrder : IOrder, IOnlineOrder
+                          {
+                            public void AddToCart() {}
+                            public void CCProcess() {}
+                          }
+                        </code>
+                      </pre>
+                  </li>
+                  <li><strong>D stand for Dependency Inversion</strong>: Entities must depend on abstractions, not on concretions. High-level module must not depend on the low-level module, but they should depend on abstractions.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Messaging</strong>
+                <p>
+                  A message queue is a queue of messages sent between applications <br>
+                  <strong>Benefits of using Caching</strong>: Asynchronous communication which means that the endpoints that are producing and consuming messages interact with the queue, not each other. Producers can add requests to the queue without waiting for them to be processed. Consumers process messages only when they are available
+                </p>
+              </li> 
+            </ol>
+          </section>
+
+          <hr class="divider">
+
+          <!-- .NET -->
+          <section id="idocs_net">
+            <h2>.NET</h2>
+            <ol>
+              <li>
+                <strong>What is IL Code & JIT (Just In Time Compiler) ?</strong>
+                <p>
+                  Different user have different machine configuration and different operating system whose unknown to visual studio. That is the main problem. To avoid this problem Microsoft Creates a code that is called as IL Code.
+                </p>
+                <ul>
+                  <li>IL code (intermediate code) or half compiled code, it’s creates at compile time.</li>
+                  <li>When this program will run at user system, this run time IL code is converted into machine code by JIT (just-in-time) compiler.</li>
+                  <li>JIT Compiler converted IL Code into Machine Code.</li>
+                </ul>
+                <p>
+                  <img class="img-fluid border" src="assets/images/1_1Hs_3RcfecuYmavO_fPDTA.png" width="680">
+                </p>
+              </li>
+              <li>
+                <strong>What is the difference between Continue & Break statement ?</strong>
+                <ul>
+                  <li>Break statement jump out of the loop</li>
+                  <li>Continue statement skips just an iteration and will continue from the next one</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Why do we need IEnumrable?</strong>
+                <ul>
+                  <li>IEnumrable helps to iterate over a collection without knowing the actual type</li>
+                  <li>IEnumrable acts like an iterable collection abstraction over any type of collection</li>
+                </ul>
+              </li>
+              <li>
+                <strong>var & dynamic</strong>
+                <ul>
+                  <li>var is statically Type and check during compile time</li>
+                  <li>dynamic executes and check during runtime</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Stack & Heap</strong>
+                <ul>
+                  <li>Stack memory stores primitive data types (int, bool, double,...).</li>
+                  <li>Heap stores data types like string and object</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Value Types & Reference Types</strong>
+                <ul>
+                  <li>Value types contain actual data. Value types are stored on stack and Value types are primitive data types</li>
+                  <li>Reference types contain pointers and the pointers point to the actual data. Reference types are all objects</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Boxing & Unboxing</strong>
+                <ul>
+                  <li>Boxing is when data moves from a value type to a reference type</li>
+                  <li>Uxboxing is when data moves from a reference type to a value type</li>
+                </ul>
+                <pre>
+                  <code class="language-html">
+                  int i = 10;
+                  object y = i;   // Boxing value type to a reference type
+                  int z = (int)y; // Unboxing ref => value
+                  </code>
+                </pre>
+              </li>
+              <li>
+                <strong>Type Casting</strong>
+                <p>
+                  Type casting is a mechanism where we convert one type of data to other type
+                </p>
+                <ul>
+                  <li>Implicit casting is when we move from lower to higher data type</li>
+                  <li>Explicit casting is when we move from higher to lower data type</li>
+                </ul>
+                <pre>
+                  <code class="language-html">
+                    int i = 10;
+                    double d = i;       // implicit casting - move from lower data type to higher data type
+                    double d1 = 100.23;	// explicit casting
+                  </code>
+                </pre>
+              </li>
+              <li>
+                <strong>Array & ArrayList</strong>
+                <ul>
+                  <li>Array: fixed length and strongly typed, faster than ArrayList</li>
+                  <li>ArrayList: flexible length and not strongly typed, slower than Array because of boxing and unboxing</li>
+                </ul>
+                <pre>
+                  <code class="language-html">
+                    int[] myArr = { 1, 2, 3 };
+
+                    ArrayList myArr = new ArrayList()
+                    myArr.Add(1);
+                    myArr.Add(2);
+                    myArr.Add("string");  // boxing and unboxing
+                  </code>
+                </pre>
+              </li>
+              <li>
+                <strong>Generic</strong>
+                <p>Define classes, interfaces  using the type parameter and without the specific data type. Generics are used to make reusable code which decrease the code redundancy</p>
+                <pre>
+                  <code class="language-html">
+                      class DataStore<T>
+                      {
+                          public T Data { get; set; }
+                      }
+                      
+                      DataStore<string> store = new DataStore<string>();
+                  </code>
+                </pre>
+              </li>
+              <li>
+                <strong>Extensions methods</strong>
+                <p>Extension methods help to add new methods to the existing ones</p>
+              </li>
+              <li>
+                <strong>constant and read-only</strong>
+                <ul>
+                  <li>constant variables are declared and initialized at compile time and the value can’t be changed after that</li>
+                  <li>read-only can change during runtime setting it in the constructor</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Serialization</strong>
+                <p>
+                  Serialization is the process of converting an object into a stream of bytes to store the object or transmit it to memory, a database or a file
+                </p>
+                <ul>
+                  <li>Memory Serialization</li>
+                  <li>Xml Serialization</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Synchronous & Asynchronous</strong>
+                <ul>
+                  <li>When we execute synchronously, we wait for it to finish before moving to another task and it will create delay in the app</li>
+                  <li>When we execute asynchronously, we can move on to another task before it finishes</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Delegates & Events</strong>
+                <ul>
+                  <li>Delegates is a pointer to a function and very useful as callbacks to communicate between threads</li>
+                  <li>Events are encapsulation over delegates. Events allow a class to notify other classes when something happened. Sender of the event is the publisher and the receiver is subscribers.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>struct & class</strong>
+                <ul>
+                  <li>struct is a value type, struct cannot be abstract and struct cannot be inherited</li>
+                  <li>class is a referenced type</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Task & Thread</strong>
+                <ul>
+                  <li>Task can return a result. But Thread doesn't</li>
+                  <li>Task supports cancellation through the use of cancellation tokens. But Thread doesn't</li>
+                  <li>A task can have multiple processes happening at the same time. Threads can only have one task running at a time</li>
+                  <li>While using thread if we get the exception in the long running method it is not possible to catch the exception in the parent function but the same can be easily caught if we are using tasks</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Abstract & Interface</strong>
+                <ul>
+                  <li>Abstract classes are classes that cannot be instantiated. that cannot create an object. The interface is like an abstract class because all the methods inside the interface are abstract methods</li>
+                  <li>Abstract classes can have both abstract and non-abstract methods but all the methods of an interface are abstract methods</li>
+                  <li>Since abstract classes can have both abstract and non-abstract methods, we need to use the Abstract keyword to declare abstract methods. But in the interface, there is no such need</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Reflection</strong>
+                <p>Reflection in C# is used to retrieve metadata on types at runtime</p>
+              </li>
+            </ol>
+          </section>
+
+          <hr class="divider">
+
+          <!-- SQL -->
+          <section id="idocs_sql">
+            <h2>SQL</h2>
+          </section>
+
+          <hr class="divider">
+
+          <!-- Javascript -->
+          <section id="idocs_javascript">
+            <h2>Javascript</h2>
+            <ol>
+              <li>
+                <strong>Undefined & Null</strong>
+                <ul>
+                  <li>Undefined means the variable has been declared but no value is assigned to it</li>
+                  <li>Null indicates absence of data</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Hoisting</strong>
+                <p>
+                  Hoisting is a mechanism where variables and function declaration are moved to the top of scope
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <hr class="divider">
+
+          <!-- Testing -->
+          <section id="idocs_testing">
+            <h2>Testing</h2>
+            <ol>
+              <li>
+                <strong>Why do we must write unit test ?</strong>
+                <p>Code quality, regression test, code readable, easy extend and maintenance</p>
+              </li>
+              <li>
+                <strong>What is a Stub and Mock ?</strong>
+                <p>
+                  The purpose of mocking and stubbing is to isolate your unit from its dependencies, allowing you to test your unit in a controlled environment.
+                </p>
+                <ul>
+                  <li>
+                    A stub is a fake object that does not affect the outcome of the test. Its only purpose is to set up the test scenario by returning dummy test data.
+                  </li>
+                  <li>A mock verifies that the unit under test behaves as expected. A test’s outcome depends on the state of the mock object after executing an action.</li>
+                </ul>
+                <img class="img-fluid border" src="assets/images/stub_vs_mock-1024x656.jpg" width="680">
+              </li>
+            </ol>
+          </section>
+
+          <hr class="divider">
+
+          <!-- System Designs -->
+          <section id="idocs_system_designs">
+            <h2>System Designs</h2>
+            <ol>
+              <li>
+                <strong>Monolithic</strong>
+                <p>Architect an application as a single deployable unit</p>
+                <strong>Advantages</strong>
+                <ul>
+                  <li>Easier debugging and testing</li>
+                  <li>Simple to deploy</li>
+                  <li>Simple to develop</li>
+                </ul>
+                <br>
+                <strong>Disadvantages</strong>
+                <br>
+                <ul>
+                  <li><strong>Understanding</strong>. When a monolithic application scales up, it becomes too complicated to understand. Also, a complex system of code within one application is hard to manage.</li>
+                  <li><strong>Making changes</strong>. It is harder to implement changes in such a large and complex application with highly tight coupling. Any code change affects the whole system so it has to be thoroughly coordinated</li>
+                  <li><strong>Scalability</strong>. You cannot scale components independently, only the whole application</li>
+                  <li><strong>New technology barriers</strong>. It is extremely problematic to apply a new technology in a monolithic application because then the entire application has to be rewritten</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Microservices</strong>
+                <p>Microservices is an architectural style that structures an application as a collection of small autonomous services (independent), modeled around a business domain</p>
+                <strong>Advantages</strong>
+                <ul>
+                  <li>Independent Development</li>
+                  <li>Independent Deployment</li>
+                  <li><strong>Fault Isolation</strong>. Even if one service of the application crash, the system still continues to function</li>
+                  <li><strong>Mixed Technology Stack</strong>. Different languages and technologies can be used to build different services of the same application</li>
+                  <li><strong>Granular Scaling</strong>. Microservice can scale on demand, no need to scale all services together</li>
+                </ul>
+                <br>
+                <strong>Disadvantages</strong>
+                <br>
+                <ul>
+                  <li>Testing</li>
+                  <li>Difficult to manage a large number of services</li>
+                  <li>Cross-cutting concerns such as externalized configuration, logging, metrics, health checks</li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+
+          <hr class="divider">
+
+          <!-- Data Structures & Algorithms -->
+          <section id="idocs_datastructures">
+            <h2>Data Structures & Algorithms</h2>
+          </section>
+
+          <hr class="divider">
+
+          <!-- Customization -->
+          <section id="idocs_best_practices">
+            <h2>Best Practices</h2>
+            <ol>
+              <li>
+                <strong>Exception Handling</strong>
+                <p>An exception is a runtime error in a program that violates a system or application constraint, or a condition that is not expected to occur during the normal execution of the program.</p>
+                <ul>
+                  <li>
+                    Use throw instead of throw ex
+                    <pre>
+                      <code class="language-html">
+                        // Bad code
+                        catch(Exception ex)
+                        {
+                            throw ex; // Stack trace will show this line as the original offender.
+                        }
+
+                        // Good code
+                        catch(Exception ex)
+                        {
+                            throw; // The original offender would be rightly pointed.
+                        }
+                      </code>
+                    </pre>
+                    <img class="img-fluid border" src="assets/images/ThrowEx.png" width="680">
+                  </li>
+                  <li>
+                    Avoid catch block that just rethrows it
+                    <pre>
+                      <code class="language-html">
+                        // Bad code
+                        public void Method1() {
+                            try {
+                                Method2();
+                            }
+                            catch (Exception ex) {
+                                // Code to handle the exception
+                                // Log the exception
+                                this.logger.LogError(ex);
+                                throw;
+                            }
+                        }
+
+                        public void Method2() {
+                            try {
+                                // Code that will throw exception
+                            }
+                            catch (Exception) {
+                                throw;
+                            }
+                        }
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    Do not swallow the exception
+                    <pre>
+                      <code class="language-html">
+                        // Bad code
+                        try
+                        {
+                            // Code that will throw exception
+                        }
+                        catch (Exception ex)
+                        {
+                        }
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    Throw exceptions instead of returning an error code
+                    <pre>
+                      <code class="language-html">
+                        // Bad code
+                        public int Method2()
+                        {
+                            try 
+                            {
+                                // Code that might throw exception
+                            }
+                            catch (Exception) 
+                            {
+                                LogError(ex);
+                                // This is bad approach as the caller function 
+                                // might miss to check the error code.
+                                return -1;
+                            }
+                        }
+                      </code>
+                    </pre>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+        </div>
+      </div>
+
+    </div>
+    <!-- Content end -->
+
+  </div>
+  <!-- Document Wrapper end -->
+
+  <!-- Back To Top -->
+  <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i
+      class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Highlight JS -->
+  <script src="assets/vendor/highlight.js/highlight.min.js"></script>
+  <!-- Easing -->
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <!-- Magnific Popup -->
+  <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <!-- Custom Script -->
+  <script src="assets/js/theme.js"></script>
+</body>
+</html>
