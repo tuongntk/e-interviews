@@ -363,6 +363,12 @@
 									<p><strong>class</strong> is a referenced type.</p>
 								</div>
 
+								<div class="mb-3 pt-2" id="sealed_class">
+									<h3 class="fw-bold">sealed class</h3>
+									<strong>sealed class</strong> is a class that cannot be inherited by other classes. Once a class is marked as sealed, it cannot be used as a base class for any other class. Any attempt to derive a new class from a sealed class will result in a compile-time error.
+									Additionally, sealing a class can improve the performance of the application by reducing the overhead associated with virtual method calls.
+								</div>
+
 								<div class="mb-3 pt-2" id="async_sync">
 									<h3 class="fw-bold">async and sync</h3>
 									<ul class="list mb-3">
@@ -682,7 +688,8 @@
 								
 								<div class="mb-3 pt-2" id="generics">
 									<h3 class="fw-bold">Generics</h3>
-									<p class="mb-3">Define classes, interfaces using the type parameter and without the specific data type. Generics are used to make reusable code which decrease the code redundancy.</p>
+									Generics are a feature in C# that allows you to define classes, interfaces, or methods with placeholders for the data types.
+									Generics enabling type-safe code reusability and reducing code duplication.
 								</div>
 
 								<div class="mb-3 pt-2" id="core">
@@ -1280,6 +1287,10 @@
 								</li>
 								<li class="nav-item">
 									<a href="#struct_class" class="nav-link">struct and class
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="#sealed_class" class="nav-link">sealed class
 									</a>
 								</li>
 								<li class="nav-item">
