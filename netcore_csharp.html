@@ -363,6 +363,24 @@
 									<p><strong>class</strong> is a referenced type.</p>
 								</div>
 
+								<div class="mb-3 pt-2" id="async_sync">
+									<h3 class="fw-bold">async and sync</h3>
+									<ul class="list mb-3">
+										<li>
+											<p>
+												<strong>async</strong> allows for non-blocking code execution.
+												With async, the thread continues to execute other code while the called method is running.
+											</p>
+										</li>
+										<li>
+											<p>
+												<strong>sync</strong> blocks the calling thread until the called method returns.
+												Sync is simpler but can hurt performance, while async can improve performance but is more complex because it requires knowledge of threading, parallelism, and mental models.
+											</p>
+										</li>
+									</ul>
+								</div>
+
 								<div class="mb-3 pt-2" id="array_arraylist">
 									<h3 class="fw-bold">Array and Array List</h3>
 									<p><strong>Array</strong> fixed length and strongly typed, faster than <strong>ArrayList</strong>.</p>
@@ -381,18 +399,56 @@
 									</div>
 								</div>
 
-								<div class="mb-3 pt-2" id="iEnumrable">
-									<h3 class="fw-bold">IEnumrable</h3>
-									<p><strong>IEnumrable</strong> helps to iterate over a collection without knowing the actual type.</p>
-									<p><strong>IEnumrable</strong> acts like an iterable collection abstraction over any type of collection.</p>
+								<div class="mb-3 pt-2" id="iEnumrable_iQueryable">
+									<h3 class="fw-bold">IEnumrable and IQueryable</h3>
+									<ul class="list mb-3">
+										<li>
+											<p>
+												<strong>IEnumrable</strong> provides an interface for getting the next item one-by-one (enumerating data).
+												IEnumerable uses IEnumerator internally and is the recommended way to enumerate the contents of a collection.	
+												IEnumerable is a deferred execution, it means IEnumerable will not execute the query until you enumerate over the data.
+												Deferred execution makes IEnumerable faster because it only gets the data when needed.
+												IEnumerable is more efficient and faster when you only need to enumerate the data once.
+												IEnumerable exists in the System.Collection Namespace.
+												IEnumerable is good for In-Memory Collection query.
+												Filter logic is executed on the client side.
+											</p>
+											<img src="assets/images/IEnumrable.png" style="max-height: 250px;" alt="" class="img-thumbnail img-responsive">
+										</li>
+										<li>
+											<p>
+												<strong>IQueryable</strong> queries out-of-memory data stores.
+												IQueryable contains methods for constructing expression trees. IQueryable inherits IEnumerable, so IQueryable does everything that IEnumerable does. IQueryable extends the IEnumerable with logic for querying data.
+												IQueryable exists in the System.Linq Namespace.
+												IQueryable uses expression trees that translate LINQ queries into the query language for the data provided.
+												IQueryable is suitable for querying data from out-memory (like remote database, service) collections.
+												Filter logic is executed on server-side (remote database, service).
+											</p>
+											<img src="assets/images/IQueryable.png" style="max-height: 250px;" alt="" class="img-thumbnail img-responsive">
+										</li>
+									</ul>
+									Both are interfaces and both are part of System.Collection. If you want to query data collection which is connected with database IQueryable is a better choice as it reduces network traffic and uses the power of SQL language.
 								</div>
 
 								<div class="mb-3 pt-2" id="iEnumrable_list">
 									<h3 class="fw-bold">IEnumrable and List</h3>
-									<p><strong>IEnumrable</strong> describes behavior, while <strong>List</strong> is an implementation of that behavior and doesn't know how many items are in it. When you use <strong>IEnumrable</strong>, you give the compiler a chance to defer work until later, possibly optimizing along the way. If you use ToList() you force the compiler to reify the results right away.</p>
-									<p><strong>IEnumrable</strong> is read-only and <strong>List</strong> is not.</p>
-									<p><strong>When you might use an IEnumerable</strong> - A massive database table, you don’t want to copy the entire things into memory and cause performance issues in your application.</p>
-									<p><strong>When you might use a List or Array</strong> - You need the results right away and are possibly mutating the structure you are querying later on..</p>
+									<ul class="list mb-3">
+										<li>
+											<p>
+												<strong>IEnumrable</strong> provides a way to enumerate the contents of a list.
+												We use LINQ to query the list of numbers. Even though the LINQ Where returns an IEnumerable, the execution is deferred until we call ToList(). When you use ToList(), you force the compiler to reify the results right away.
+											</p>
+										</li>
+										<li>
+											<p>
+												<strong>List</strong> uses IList, a non-generic interface, internally.
+												The List is more efficient when you need to enumerate the data multiple times because it already has all of it in memory.
+												Lists store objects in an internal array. When the internal array gets full, the ArrayList will automatically create a new, larger, internal array and copy all the objects from the old array to the new one. Adding elements to a List is fast because there is usually a free slot at the end of the internal array.
+											</p>
+										</li>
+									</ul>
+									Both IEnumerable and List are part of .NET's System.Collections namespace.IEnumerable is read-only and List is not.
+									IEnumerable is a deferred execution while List is an immediate execution.
 								</div>
 
 								<div class="mb-3 pt-2" id="task_thread">
@@ -1227,10 +1283,14 @@
 									</a>
 								</li>
 								<li class="nav-item">
+									<a href="#async_sync" class="nav-link">async and sync
+									</a>
+								</li>
+								<li class="nav-item">
 									<a href="#array_arraylist" class="nav-link">Array and ArrayList</a>
 								</li>
 								<li class="nav-item">
-									<a href="#iEnumrable" class="nav-link">IEnumrable</a>
+									<a href="#iEnumrable_iQueryable" class="nav-link">IEnumrable and IQueryable</a>
 								</li>
 								<li class="nav-item">
 									<a href="#iEnumrable_list" class="nav-link">IEnumrable and List</a>

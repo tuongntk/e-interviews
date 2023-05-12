@@ -281,32 +281,17 @@
 									<p><strong>Example of microtask</strong> is <code>process.nextTick</code>, <code>Promises</code>, <code>queueMicrotask</code>, and <code>MutationObserver</code>.</p>
 									<p><img src="assets/images/1_lUBfIhcEcO7KWJK9gqIG_g.png" style="max-height: 500px;" alt="" class="img-thumbnail img-responsive"></p>
 									
-									<div>
-										<pre class="language-javascript">
-											<code>
-												//String example
-												let text = 'abcde'
-												text[1] = 'z'
-												console.log(text) //ans: abcde
-											</code>
-										</pre>
-									</div>
-									<p>Assigning arr.length as 0 is the same as resetting or clearing the array, so right now, the array will become an empty array. Because an array consumes a contiguous memory location, when we assign the index 100 to a value (including undefined), JS will reserve the memory from index 0 to index 100. This means the array length now is 101</p>
-									<div>
-										<pre class="language-javascript">
-											<code>
-												//Array example
-												const arr = [1,2,3]
-												arr.length = 0
-												console.log(arr) //ans: []
-
-												//Array example
-												const arr = [1,2,3,4]
-												arr[100] = undefined
-												console.log(arr, arr.length) //ans: [ 1, 2, 3, 4, <96 empty items>, undefined ] 101
-											</code>
-										</pre>
-									</div>
+									<h5 class="fw-bold">How event loop works?</h5>
+									<ul class="list mb-6">
+										<li>1. dequeue and run 1 task from macrotask queue.</li>
+										<li>2. dequeue and run 1 task from microtask queue.</li>
+										<li>
+											<p>while microtask is not empty:</p>
+											<p>- go back to step 3</p>
+										</li>
+										<li>3. If the macrotask queue is empty, wait till a macrotask appears.</li>
+										<li>4. go back to step 1.</li>
+									</ul>
 								</div>
 
 								<div class="mb-3" id="mutability">
