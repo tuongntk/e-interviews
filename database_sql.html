@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Interview Preparation - DATABASE - SQL</title>
+
+	<!-- Global stylesheets -->
+	<link href="assets/fonts/inter/inter.css" rel="stylesheet" type="text/css">
+	<link href="assets/icons/phosphor/styles.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/all.min.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script src="assets/js/main/bootstrap.bundle.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script src="assets/js/plugins/prism.min.js"></script>
+	<script src="assets/js/main/app.js"></script>
+	<!-- /theme JS files -->
+</head>
+
+<body>
+
+	<!-- Page content -->
+	<div class="page-content">
+
+		<!-- Main sidebar -->
+		<div class="sidebar sidebar-main sidebar-expand-lg">
+
+			<!-- Sidebar header -->
+			<div class="sidebar-section border-bottom">
+				<div class="sidebar-logo d-flex justify-content-center align-items-center">
+					<a href="index.html" class="d-inline-flex align-items-center py-2">
+						<img src="assets/images/logo_icon.svg" class="sidebar-logo-icon" alt="">
+						<h4 class="sidebar-resize-hide text-body lh-1 mb-0 ms-3">Limitless</h4>
+					</a>
+
+					<div class="sidebar-resize-hide ms-auto">
+						<span class="badge bg-danger bg-opacity-10 text-danger rounded-pill">v4.0</span>
+						<button type="button"
+							class="btn btn-light btn-icon btn-sm rounded-pill border-transparent sidebar-mobile-main-toggle d-lg-none ms-2">
+							<i class="ph-x"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- /sidebar header -->
+
+
+			<!-- Sidebar content -->
+			<div class="sidebar-content">
+				<div class="sidebar-section">
+					<ul class="nav nav-sidebar py-2" data-nav-type="accordion">
+
+						<li class="nav-item nav-item-submenu">
+							<a href="#" class="nav-link">.NET CORE</a>
+							<ul class="nav-group-sub collapse">
+								<li class="nav-item"><a href="netcore_csharp.html" class="nav-link">C#</a></li>
+								<li class="nav-item"><a href="plugins_forms.html" class="nav-link">ASP.NET MVC</a></li>
+								<li class="nav-item"><a href="plugins_editors.html" class="nav-link">Entity
+										Framework</a></li>
+								<li class="nav-item"><a href="plugins_uploaders.html" class="nav-link">LINQ</a></li>
+							</ul>
+						</li>
+
+						<li class="nav-item"><a href="javascript.html" class="nav-link">JavaScript</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">NodeJS</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Design Patterns</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Dependency Injection</a>
+						</li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">SOLID</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">OOP</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">GraphQL</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Rest API</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">React</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Redux</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Angular</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Git</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">CSS</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Testing</a></li>
+
+						<li class="nav-item nav-item-submenu">
+							<a href="#" class="nav-link">Database</a>
+							<ul class="nav-group-sub collapse">
+								<li class="nav-item"><a href="database_sql.html" class="nav-link">SQL</a></li>
+								<li class="nav-item"><a href="plugins_forms.html" class="nav-link">MongoDB</a></li>
+								<li class="nav-item"><a href="plugins_forms.html" class="nav-link">My SQL</a></li>
+							</ul>
+						</li>
+
+						<li class="nav-item nav-item-submenu">
+							<a href="#" class="nav-link">System Design & Architecture</a>
+							<ul class="nav-group-sub collapse">
+								<li class="nav-item"><a href="plugins_forms.html" class="nav-link">Monolithic</a></li>
+								<li class="nav-item"><a href="plugins_forms.html" class="nav-link">Microservices</a>
+								</li>
+								<li class="nav-item"><a href="plugins_forms.html" class="nav-link">Load Balancing</a>
+								</li>
+								<li class="nav-item"><a href="plugins_forms.html" class="nav-link">My SQL</a></li>
+							</ul>
+						</li>
+
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Best Practices</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Web Security</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Caching</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Redis</a></li>
+						<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Data Structures &
+								Algorithms</a></li>
+
+						<li class="nav-item nav-item-submenu">
+							<a href="#" class="nav-link">DevOps</a>
+							<ul class="nav-group-sub collapse">
+								<li class="nav-item"><a href="plugins_forms.html" class="nav-link">Linux</a></li>
+								<li class="nav-item"><a href="plugins_forms.html" class="nav-link">Docker</a></li>
+								<li class="nav-item"><a href="plugins_forms.html" class="nav-link">Kubernetes</a></li>
+							</ul>
+						</li>
+
+						<li class="nav-item nav-item-submenu">
+							<a href="#" class="nav-link">Mobile</a>
+							<ul class="nav-group-sub collapse">
+								<li class="nav-item"><a href="plugins_forms.html" class="nav-link">Flutter</a></li>
+						</li>
+					</ul>
+					</li>
+
+					<li class="nav-item nav-item-submenu">
+						<a href="#" class="nav-link">Cloud</a>
+						<ul class="nav-group-sub collapse">
+							<li class="nav-item"><a href="plugins_forms.html" class="nav-link">AWS</a></li>
+							<li class="nav-item"><a href="plugins_forms.html" class="nav-link">GCP</a></li>
+							<li class="nav-item"><a href="plugins_forms.html" class="nav-link">Azure</a></li>
+						</ul>
+					</li>
+
+					<li class="nav-item-header mt-1">
+						<div class="text-uppercase fs-sm lh-sm opacity-50">Main</div> <i
+							class="ph-dots-three sidebar-resize-show"></i>
+					</li>
+					<li class="nav-item"><a href="index.html" class="nav-link">Introduction</a></li>
+					<li class="nav-item"><a href="main_getting_started.html" class="nav-link">Getting started</a>
+					</li>
+					<li class="nav-item"><a href="main_starter_kit.html" class="nav-link">Starter kit</a></li>
+					<li class="nav-item"><a href="main_rtl.html" class="nav-link">RTL layout</a></li>
+
+					<li class="nav-item-header mt-2">
+						<div class="text-uppercase fs-sm lh-sm opacity-50">Basic functionality</div> <i
+							class="ph-dots-three sidebar-resize-show"></i>
+					</li>
+					<li class="nav-item"><a href="base_scss_css.html" class="nav-link">SCSS and CSS</a></li>
+					<li class="nav-item"><a href="base_css_variables.html" class="nav-link">CSS variables</a></li>
+					<li class="nav-item"><a href="base_scss_compile.html" class="nav-link">Compiling SCSS</a></li>
+					<li class="nav-item nav-item-submenu">
+						<a href="#" class="nav-link">Plugins</a>
+						<ul class="nav-group-sub collapse">
+							<li class="nav-item"><a href="plugins_forms.html" class="nav-link">Forms</a></li>
+							<li class="nav-item"><a href="plugins_editors.html" class="nav-link">Editors</a></li>
+							<li class="nav-item"><a href="plugins_uploaders.html" class="nav-link">Uploaders</a>
+							</li>
+							<li class="nav-item"><a href="plugins_extensions.html" class="nav-link">Extensions</a>
+							</li>
+							<li class="nav-item"><a href="plugins_notifications.html" class="nav-link">Notifications</a>
+							</li>
+							<li class="nav-item"><a href="plugins_pickers.html" class="nav-link">Pickers</a></li>
+							<li class="nav-item"><a href="plugins_tables.html" class="nav-link">Tables</a></li>
+							<li class="nav-item"><a href="plugins_ui.html" class="nav-link">UI</a></li>
+							<li class="nav-item"><a href="plugins_vis.html" class="nav-link">Visualization</a></li>
+						</ul>
+					</li>
+					<li class="nav-item"><a href="base_icons.html" class="nav-link">Icons</a></li>
+
+					<li class="nav-item"><a href="base_bootstrap.html" class="nav-link">Bootstrap</a></li>
+					<li class="nav-item"><a href="base_color_system.html" class="nav-link">Color system</a></li>
+					<li class="nav-item"><a href="base_helpers.html" class="nav-link">Helpers</a></li>
+					<li class="nav-item"><a href="base_themes.html" class="nav-link">Themes</a></li>
+
+					<li class="nav-item-header mt-2">
+						<div class="text-uppercase fs-sm lh-sm opacity-50">Layout options</div> <i
+							class="ph-dots-three sidebar-resize-show"></i>
+					</li>
+					<li class="nav-item"><a href="layout_overview.html" class="nav-link">Layouts</a></li>
+					<li class="nav-item"><a href="layout_sidebars.html" class="nav-link">Sidebars</a></li>
+					<li class="nav-item"><a href="layout_navbars.html" class="nav-link">Navbars</a></li>
+					<li class="nav-item"><a href="layout_v_nav.html" class="nav-link">Vertical navigation</a></li>
+					<li class="nav-item"><a href="layout_h_nav.html" class="nav-link">Horizontal navigation</a></li>
+					<li class="nav-item"><a href="layout_page_header.html" class="nav-link">Page header</a></li>
+
+					<li class="nav-item-header mt-2">
+						<div class="text-uppercase fs-sm lh-sm opacity-50">Other</div> <i
+							class="ph-dots-three sidebar-resize-show"></i>
+					</li>
+					<li class="nav-item"><a href="other_migration.html" class="nav-link active">Migration to
+							v4.0</a></li>
+					<li class="nav-item"><a href="other_credits.html" class="nav-link">Sources and credits</a></li>
+					<li class="nav-item"><a href="other_changelog.html" class="nav-link">Changelog</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /sidebar content -->
+
+		</div>
+		<!-- /main sidebar -->
+
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+
+			<!-- Main navbar -->
+			<div class="navbar navbar-expand-lg navbar-static border-bottom">
+				<div class="container-fluid">
+					<div class="d-flex d-lg-none flex-fill me-2">
+						<button type="button" class="navbar-toggler sidebar-mobile-main-toggle rounded-pill">
+							<i class="ph-list"></i>
+						</button>
+					</div>
+
+					<div class="hstack gap-1 d-none d-lg-flex me-2 mb-0">
+						<a href="index.html" class="text-body fw-semibold d-inline-flex align-items-center gap-2"><i
+								class="ph-house-line"></i> Documentation</a> - <span class="text-muted">Migration to
+							v4.0</span>
+					</div>
+
+					<ul class="nav hstack gap-sm-1 ms-auto">
+						<li class="nav-item">
+							<a href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328/comments"
+								class="navbar-nav-link navbar-nav-link-icon rounded-pill" target="_blank">
+								<div class="hstack gap-2 mx-lg-1">
+									<i class="ph-chats"></i>
+									<span class="d-none d-lg-inline-block">Comments</span>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="https://themeforest.net/item/limitless-responsive-web-application-kit/reviews/13080328"
+								class="navbar-nav-link navbar-nav-link-icon rounded-pill" target="_blank">
+								<div class="hstack gap-2 mx-lg-1">
+									<i class="ph-star"></i>
+									<span class="d-none d-lg-inline-block">Reviews</span>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="https://kopyov.ticksy.com/"
+								class="navbar-nav-link navbar-nav-link-icon rounded-pill" target="_blank">
+								<div class="hstack gap-2 mx-lg-1">
+									<i class="ph-lifebuoy"></i>
+									<span class="d-none d-lg-inline-block">Support</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+
+					<div class="ms-1 ms-lg-3">
+						<label class="btn btn-light btn-icon border-transparent rounded-pill" for="btncheck1">
+							<input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+							<i class="ph-moon"></i>
+						</label>
+					</div>
+				</div>
+			</div>
+			<!-- /main navbar -->
+
+
+			<!-- Inner content -->
+			<div class="content-inner" data-bs-spy="scroll" data-bs-target="#page_nav" tabindex="0">
+
+				<!-- Content area -->
+				<div class="content container">
+
+					<!-- Inner container -->
+					<div class="d-flex align-items-stretch align-items-lg-start flex-column flex-lg-row">
+
+						<!-- Left content -->
+						<div class="flex-1 order-2 order-lg-1 wmin-0">
+
+							<!-- SQL -->
+							<div class="mb-3">
+								<h1 class="display-6 fw-bold">SQL</h1>
+
+								<div class="mb-3" id="Clustered_Nonclustered_Index">
+									<h3 class="fw-bold">Clustered And Nonclustered Index</h3>
+									<ul class="list mb-3">
+										<li>
+											<p>A clustered index is a type of database index that <strong>sorts and
+													stores data</strong> rows in a table or view based on their key
+												values.</p>
+											<p>It determines the physical order of data rows in a table, and
+												therefore, a <strong>table can only have one clustered
+													index</strong>.</p>
+											<h3 class="fw-bold">Pros of Clustered Index</h3>
+											<ul>
+												<li><strong>Faster query performance</strong>: Data is physically
+													sorted by the Clustered Key in your storage subsystem, which
+													allows efficient data retrieval.</li>
+												<li><strong>Lower complexity</strong>: The complexity of a seek
+													operation is always O(log N).</li>
+												<li><strong>Improved query performance</strong>: Queries that join
+													tables or perform aggregations can benefit from a clustered
+													index. The physical sort order minimizes the need for sorting
+													operations.</li>
+											</ul>
+											<h3 class="fw-bold">Cons of Clustered Index</h3>
+											<ul>
+												<li>INSERT, UPDATE, and DELETE operations <strong>may be
+														slower</strong> due to the rearrangement of clustered
+													indexes.</li>
+												<li>To maintain good performance, we <strong>need to
+														maintain</strong> the clustered indexes to keep it free from
+													fragmentation.</li>
+												<li>Last Page Insert Latch Contention: caused when data is inserted
+													only at the end of a clustered index, resulting in
+													<strong>multiple queries competing</strong> against each other
+													for access.</li>
+												<li>Hard page splits occur when a random clustered key is used,
+													which <strong>increases transaction log work</strong> and
+													<strong>causes index fragmentation</strong>.</li>
+												<li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-ver16"
+														target="_blank">Index fragmentation</a> can lead to poor
+													disk head movement on platters and <strong>reduced
+														performance</strong>.</li>
+											</ul>
+										</li>
+										<li>
+											<p>Nonclustered indexes have a structure that is separate from the
+												data rows. Each key-value pair in the nonclustered index has a
+												pointer (row locator) to the key for a clustered index.</p>
+											<h3 class="fw-bold">Pros of Nonclustered Index</h3>
+											<ul>
+												<li><strong>Multiple indexes</strong>: One table can have many
+													clustered indexes to support different query optimizations.
+												</li>
+												<li><strong>Improved query performance</strong>: Nonclustered
+													indexes can improve query performance by providing quick
+													access to specific data rows based on the index key values.
+												</li>
+												<li><strong>Reduced I/O</strong>: by providing quick access to
+													specific rows, SQL Server can read fewer data pages.</li>
+												<li><strong>Flexibility</strong>: Nonclustered indexes can be
+													created on any column or combination of columns, allowing
+													for greater flexibility in query optimization.</li>
+												<li><strong>Supports large data sets</strong>: Efficient access
+													to specific rows even in very large tables.</li>
+											</ul>
+											<h3 class="fw-bold">Cons of Nonclustered Index</h3>
+											<ul>
+												<li><strong>Increased storage space</strong></li>
+												<li><strong>Decreased performance for write operations</strong>:
+													Write operations can become slow because the server must
+													update the index as well as the table.</li>
+												<li><strong>Index fragmentation</strong></li>
+												<li><strong>Maintenance overhead</strong>: Require maintenance
+													from a DBA to keep them optimized.</li>
+												<li><strong>Index selection</strong>: The SQL Server query
+													optimizer must choose which indexes to use for each query,
+													and sometimes it can choose suboptimal indexes.</li>
+											</ul>
+										</li>
+									</ul>
+									A table can have one clustered index, but multiple nonclustered.
+									When retriving data based on index, clustered indexes are faster than nonclustered
+									indexes because the data is physically stored in the same order.
+								</div>
+							</div>
+							<!-- /SQL -->
+
+						</div>
+						<!-- /left content -->
+
+
+						<!-- Right sidebar component -->
+						<div class="sticky-lg-top order-1 order-lg-2 wmin-lg-300 ms-lg-4 mb-3">
+							<h6 class="fw-semibold mt-lg-3 mb-3">On this page</h6>
+
+							<ul class="nav nav-scrollspy flex-column" id="page_nav">
+								<li class="nav-item">
+									<a href="#Clustered_Nonclustered_Index" class="nav-link">Clustered and Nonclustered
+										Index</a>
+								</li>
+							</ul>
+						</div>
+						<!-- /right sidebar component -->
+
+					</div>
+					<!-- /inner container -->
+
+				</div>
+				<!-- /content area -->
+
+
+				<!-- Footer -->
+				<div class="navbar navbar-sm navbar-footer border-top">
+					<div class="container-fluid">
+						<span>&copy; 2022 <a
+								href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328">Limitless
+								Web App Kit</a></span>
+
+						<ul class="nav">
+							<li class="nav-item">
+								<a href="https://kopyov.ticksy.com/"
+									class="navbar-nav-link navbar-nav-link-icon rounded" target="_blank">
+									<div class="d-flex align-items-center mx-md-1">
+										<i class="ph-lifebuoy"></i>
+										<span class="d-none d-md-inline-block ms-2">Support</span>
+									</div>
+								</a>
+							</li>
+							<li class="nav-item ms-md-1">
+								<a href="https://demo.interface.club/limitless/demo/Documentation/index.html"
+									class="navbar-nav-link navbar-nav-link-icon rounded" target="_blank">
+									<div class="d-flex align-items-center mx-md-1">
+										<i class="ph-file-text"></i>
+										<span class="d-none d-md-inline-block ms-2">Docs</span>
+									</div>
+								</a>
+							</li>
+							<li class="nav-item ms-md-1">
+								<a href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328?ref=kopyov"
+									class="navbar-nav-link navbar-nav-link-icon text-primary bg-primary bg-opacity-10 fw-semibold rounded"
+									target="_blank">
+									<div class="d-flex align-items-center mx-md-1">
+										<i class="ph-shopping-cart"></i>
+										<span class="d-none d-md-inline-block ms-2">Purchase</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /footer -->
+
+			</div>
+			<!-- /inner content -->
+
+		</div>
+		<!-- /main content -->
+
+	</div>
+	<!-- /page content -->
+</body>
+
+</html>
