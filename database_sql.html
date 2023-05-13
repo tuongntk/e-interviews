@@ -283,86 +283,130 @@
 
 								<div class="mb-3" id="Clustered_Nonclustered_Index">
 									<h3 class="fw-bold">Clustered And Nonclustered Index</h3>
-									<ul class="list mb-3">
-										<li>
-											<p>A clustered index is a type of database index that <strong>sorts and
-													stores data</strong> rows in a table or view based on their key
-												values.</p>
-											<p>It determines the physical order of data rows in a table, and
+									<h5>Clustered index</h5>
+									<p>
+										A clustered index is a type of database index that <strong>sorts and
+										stores data</strong> rows in a table or view based on their key values.
+										It determines the physical order of data rows in a table, and
 												therefore, a <strong>table can only have one clustered
-													index</strong>.</p>
-											<h3 class="fw-bold">Pros of Clustered Index</h3>
-											<ul>
-												<li><strong>Faster query performance</strong>: Data is physically
-													sorted by the Clustered Key in your storage subsystem, which
-													allows efficient data retrieval.</li>
-												<li><strong>Lower complexity</strong>: The complexity of a seek
-													operation is always O(log N).</li>
-												<li><strong>Improved query performance</strong>: Queries that join
-													tables or perform aggregations can benefit from a clustered
-													index. The physical sort order minimizes the need for sorting
-													operations.</li>
-											</ul>
-											<h3 class="fw-bold">Cons of Clustered Index</h3>
-											<ul>
-												<li>INSERT, UPDATE, and DELETE operations <strong>may be
-														slower</strong> due to the rearrangement of clustered
-													indexes.</li>
-												<li>To maintain good performance, we <strong>need to
-														maintain</strong> the clustered indexes to keep it free from
-													fragmentation.</li>
-												<li>Last Page Insert Latch Contention: caused when data is inserted
+													index</strong>.
+									</p>
+									<ol class="list mb-3">
+										<li>
+											<strong class="d-block">Pros of Clustered Index</strong>
+											- <strong>Faster query performance</strong>: Data is physically
+												sorted by the Clustered Key in your storage subsystem, which
+												allows efficient data retrieval.
+											<br>
+											- <strong>Lower complexity</strong>: The complexity of a seek
+												operation is always O(log N).
+											<br>
+											- <strong>Improved query performance</strong>: Queries that join
+											tables or perform aggregations can benefit from a clustered
+											index. The physical sort order minimizes the need for sorting
+											operations.
+										</li>
+										<li>
+											<strong class="d-block">Cons of Clustered Index</strong>
+											- INSERT, UPDATE, and DELETE operations <strong>may be
+												slower</strong> due to the rearrangement of clustered
+											indexes.
+											<br>
+											- To maintain good performance, we <strong>need to
+												maintain</strong> the clustered indexes to keep it free from
+											fragmentation.
+											<br>
+											- Last Page Insert Latch Contention: caused when data is inserted
 													only at the end of a clustered index, resulting in
 													<strong>multiple queries competing</strong> against each other
-													for access.</li>
-												<li>Hard page splits occur when a random clustered key is used,
+													for access.
+											<br>
+											- Hard page splits occur when a random clustered key is used,
 													which <strong>increases transaction log work</strong> and
-													<strong>causes index fragmentation</strong>.</li>
-												<li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-ver16"
-														target="_blank">Index fragmentation</a> can lead to poor
-													disk head movement on platters and <strong>reduced
-														performance</strong>.</li>
-											</ul>
+													<strong>causes index fragmentation</strong>.
+											<br>
+											- <a href="https://learn.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-ver16"
+											target="_blank">Index fragmentation</a> can lead to poor
+											disk head movement on platters and <strong>reduced
+											performance</strong>.
+										</li>
+									</ol>
+
+									<h5>Nonclustered index</h5>
+									<p>Nonclustered indexes have a structure that is separate from the
+										data rows. Each key-value pair in the nonclustered index has a
+										pointer (row locator) to the key for a clustered index.</p>
+
+									<ol class="list mb-3">
+										<li>
+											<strong class="d-block">Pros of Nonclustered Index</strong>
+											- <strong>Multiple indexes</strong>: One table can have many
+											clustered indexes to support different query optimizations.
+											<br>
+											- <strong>Improved query performance</strong>: Nonclustered
+											indexes can improve query performance by providing quick
+											access to specific data rows based on the index key values.
+											<br>
+											- <strong>Reduced I/O</strong>: by providing quick access to
+											specific rows, SQL Server can read fewer data pages.
+											<br>
+											- <strong>Flexibility</strong>: Nonclustered indexes can be
+											created on any column or combination of columns, allowing
+											for greater flexibility in query optimization.
+											<br>
+											- <strong>Supports large data sets</strong>: Efficient access
+											to specific rows even in very large tables.
 										</li>
 										<li>
-											<p>Nonclustered indexes have a structure that is separate from the
-												data rows. Each key-value pair in the nonclustered index has a
-												pointer (row locator) to the key for a clustered index.</p>
-											<h3 class="fw-bold">Pros of Nonclustered Index</h3>
-											<ul>
-												<li><strong>Multiple indexes</strong>: One table can have many
-													clustered indexes to support different query optimizations.
-												</li>
-												<li><strong>Improved query performance</strong>: Nonclustered
-													indexes can improve query performance by providing quick
-													access to specific data rows based on the index key values.
-												</li>
-												<li><strong>Reduced I/O</strong>: by providing quick access to
-													specific rows, SQL Server can read fewer data pages.</li>
-												<li><strong>Flexibility</strong>: Nonclustered indexes can be
-													created on any column or combination of columns, allowing
-													for greater flexibility in query optimization.</li>
-												<li><strong>Supports large data sets</strong>: Efficient access
-													to specific rows even in very large tables.</li>
-											</ul>
-											<h3 class="fw-bold">Cons of Nonclustered Index</h3>
-											<ul>
-												<li><strong>Increased storage space</strong></li>
-												<li><strong>Decreased performance for write operations</strong>:
-													Write operations can become slow because the server must
-													update the index as well as the table.</li>
-												<li><strong>Index fragmentation</strong></li>
-												<li><strong>Maintenance overhead</strong>: Require maintenance
-													from a DBA to keep them optimized.</li>
-												<li><strong>Index selection</strong>: The SQL Server query
-													optimizer must choose which indexes to use for each query,
-													and sometimes it can choose suboptimal indexes.</li>
-											</ul>
+											<strong class="d-block">Cons of Nonclustered Index</strong>
+											- <strong>Increased storage space</strong>
+											<br>
+											- <strong>Decreased performance for write operations</strong>:
+											Write operations can become slow because the server must
+											update the index as well as the table.
+											<br>
+											- <strong>Index fragmentation</strong>
+											<br>
+											- <strong>Maintenance overhead</strong>: Require maintenance
+											from a DBA to keep them optimized.
+											<br>
+											- <strong>Index selection</strong>: The SQL Server query
+											optimizer must choose which indexes to use for each query,
+											and sometimes it can choose suboptimal indexes.
 										</li>
-									</ul>
+									</ol>
 									A table can have one clustered index, but multiple nonclustered.
 									When retriving data based on index, clustered indexes are faster than nonclustered
 									indexes because the data is physically stored in the same order.
+
+									<h5>Should a table have a clustered index?</h5>
+									It's a good practice for every table to have a clustered index. In most cases, a clustered index is placed on the primary key of a table.
+									<br>
+									If a table does not have a clustered index, the data rows are stored in an unordered structure called a heap.
+									<br><br>
+									<h5>What happens when we modify an indexed column?</h5>
+									When we modify a record of an indexed column in a clustered index, the database may need to move the entire row into a new position to maintain the sorted order. Under the hood, the update turns into a DELETE followed by an INSERT query. It's way more work, so it decreases performance.
+									<br>
+									The clustered index in the table typically uses primary or foreign key columns since key values don't usually change after insertion.
+									<br><br>
+									<h5>Why is database index important?</h5>
+									A database index is important because it makes finding records faster.
+									<br>
+									On-disk indexes allow SQL Server to move faster through the table's rows using index keys, allowing direct retrieval of results instead of scanning all records.
+									<br>
+									For example, we created an index on the primary key column and we query for data based on a primary key value. SQL Server will first look for that value in the index before using it to locate the whole row of data. Without an index, the SQL Server would have o scan the table, which significantly affects performance.
+									<br>
+									The scanning process is expensive. SQL Server navigates from the root node through the other intermediate nodes until it arrives at the target leaf node that contains the data row or pointer.
+									<br><br>
+									<h5>How to choose a clustered index?</h5>
+									Since a table can have only one clustered index, choose it based on which query would benefit most from it:
+									<ul>
+										<li>Most selective</li>
+										<li>Most likely to be used to sort</li>
+										<li>Most likely to be used to filter</li>
+										<li>Most likely to be used to join</li>
+										<li>Less likely to change often</li>
+									</ul>
 								</div>
 							</div>
 							<!-- /SQL -->
