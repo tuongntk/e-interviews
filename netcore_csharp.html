@@ -555,6 +555,43 @@
 										<p>
 											An <strong>event</strong> is a message to inform something has already happened in the past.
 											<strong>Events</strong> are internally just wrapper over delegates.
+											Events are based on the delegate model, which is a type that holds a reference to a method with a specific signature and return type
+											<div>
+												<pre class="language-csharp">
+													<code>
+														// Declare a delegate type for an event
+														public delegate void EventHandler(object sender, EventArgs e);
+														
+														// Declare an event of the delegate type
+														public event EventHandler MyEvent;
+
+														To raise an event, you invoke the delegate using the Invoke method or the shorthand syntax:
+														// Raise an event with data
+														MyEvent?.Invoke(this, new EventArgs());
+
+														// Raise an event without data
+														MyEvent?.Invoke(this, EventArgs.Empty);
+
+														To subscribe to an event, you add an event handler, which is a method that matches the signature of the delegate type and performs some actions in response to the event(learn.microsoft.com)(learn.microsoft.com). You can use the += operator to attach an event handler to an event:
+
+														// Define an event handler method
+														public void OnMyEvent(object sender, EventArgs e)
+														{
+														// Do something when the event occurs
+														Console.WriteLine("MyEvent occurred");
+														}
+
+														// Subscribe to an event
+														MyEvent += OnMyEvent;
+
+														To unsubscribe from an event, you use the -= operator to detach an event handler from an event(learn.microsoft.com). For example:
+
+														// Unsubscribe from an event
+														MyEvent -= OnMyEvent;
+													</code>
+												</pre>
+											</div>
+
 											<strong>Events</strong> use publish-subscribe pattern.
 											<strong>Events</strong> event has two actors:
 										</p>
